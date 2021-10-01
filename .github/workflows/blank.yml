@@ -15,7 +15,9 @@ jobs:
           path: main-repo
 
       - name: Get current branch name
-        run: git branch --show-current > _current-branch-name-of-the-repository
+        run: |
+          cd main-rpeo
+          git branch --show-current > ../_current-branch-name-of-the-repository
 
       # https://github.com/actions/checkout#Checkout-multiple-repos-side-by-side
       - name: Checkout companion repo
@@ -25,6 +27,6 @@ jobs:
           path: rails
       - name: Checkout corresponding branch
         run: |
-          branch_name=$(cat ./main-repo/_current-branch-name-of-the-repository)
-          cd rails/
+          branch_name=$(cat _current-branch-name-of-the-repository)
+          cd rails
           git checkout "${branch_name}"
