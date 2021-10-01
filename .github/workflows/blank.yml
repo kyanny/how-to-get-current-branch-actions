@@ -16,6 +16,7 @@ jobs:
 
       - name: Get current branch name
         run: |
+          ls -lah
           cd main-rpeo
           git branch --show-current > ../_current-branch-name-of-the-repository
 
