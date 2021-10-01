@@ -16,7 +16,6 @@ jobs:
 
       - name: Get current branch name
         run: |
-          ls -lah
           cd main-repo
           git branch --show-current > ../_current-branch-name-of-the-repository
 
@@ -30,4 +29,4 @@ jobs:
         run: |
           branch_name=$(cat _current-branch-name-of-the-repository)
           cd rails
-          git checkout "${branch_name}"
+          git checkout -b "${branch_name}"
