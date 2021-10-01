@@ -36,4 +36,6 @@ jobs:
           echo test, and deploy your project.
 
       - name: Get current branch
-        run: git current-branch
+        run:  |
+          git --version
+          git current-branch
