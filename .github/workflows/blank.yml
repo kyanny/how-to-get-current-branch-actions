@@ -2,7 +2,7 @@ name: demo
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, 6-1-stable ]
   workflow_dispatch:
 
 jobs:
@@ -30,3 +30,4 @@ jobs:
           branch_name=$(cat _current-branch-name-of-the-repository)
           cd rails
           git checkout -b "${branch_name}"
+          ls -lah
